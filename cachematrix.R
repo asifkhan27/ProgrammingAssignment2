@@ -1,3 +1,4 @@
+## Store matrix in cache
 makeCacheMatrix <- function(x = matrix()) {
 
   m <- NULL
