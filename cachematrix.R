@@ -1,5 +1,5 @@
-## Store matrix in cache
-makeCacheMatrix <- function(x = matrix()) {
+
+makeCacheMatrix <- function(x = matrix()) {     ## Store matrix in cache
 
   m <- NULL
   set <- function(y){
@@ -15,15 +15,15 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-cacheSolve <- function(x, ...) {
-  ## Return a matrix that is the inverse of 'x'
+cacheSolve <- function(x, ...) {                   ## Return a matrix that is the inverse of 'x'
+
   m <- x$getInverse()
-  if(!is.null(m)){
+  if(!is.null(m)){                                 ##Check matrix is already compiled or not
     message("getting cached data")
     return(m)
   }
   matrix1 <- x$get()
   m <- solve(matrix1,...)
-  x$setInverse(m)
+  x$setInverse(m)                                 ##Print inverse matrix
   m
 }
